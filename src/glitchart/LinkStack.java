@@ -1,10 +1,13 @@
 package glitchart;
 
-/**BST Program
+/**Glitch-Art
 *
 * @author Khalil Stemmler
 * October 2nd, 2014
-* The LinkStack class is used to aid the BST class in use of a stackTraversal() method call. The LinkStack class implements the Stacks interface.
+* The LinkStack class is used in the Glitch-Pond project as a means to keep changes made to the picture in a stack data structure. 
+* This is done so that we can revert our changes to the glitched picture by seeking the previous picture that is represented
+* by the byte[]. The LinkStack class implements the Stacks interface.
+* 
 * @see LinkStack
 * @see stackTraversal()
 * @see Node

@@ -1,11 +1,11 @@
 package glitchart;
 
-/**BST Program
+/**Glitch-Pond
 *
 * @author Khalil Stemmler
 * October 2nd, 2014
-* This Node class is used within the BST class and as elements for the LinkStack class. By default, the leftTag and rightTag are false.
-* This allows us to create a normal BST and a Threaded BST where the default is for a normal BST.
+* This Node class is used as an object in the LinkStack. In the Glitch-Pond project, each Node keeps a byte[] array that holds the
+* binary data for an image.
 */
 
 public class Node {

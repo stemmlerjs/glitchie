@@ -1,4 +1,15 @@
+/**Glitch-Art
+*
+* @author Khalil Stemmler
+* October 10th, 2015
+* The gui2 class is not used in the execution of the project. This class was used as a reference to build the GUI for GuiAndListener.
+*/
+
+
 package gui2;
+
+import glitchart.LinkStack;
+import glitchart.Node;
 
 import java.awt.EventQueue;
 
@@ -8,11 +19,8 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
 import javax.swing.JTextPane;
 import javax.swing.LayoutStyle.ComponentPlacement;
-import java.awt.Component;
-import javax.swing.Box;
-import java.awt.Label;
-import java.awt.TextArea;
 import javax.swing.JLabel;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 

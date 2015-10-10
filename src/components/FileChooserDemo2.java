@@ -32,14 +32,10 @@
 package components;
 
 import java.io.*;
-import java.awt.*;
-import java.awt.event.*;
 import java.awt.image.BufferedImage;
-
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.UIManager.LookAndFeelInfo;
-import javax.swing.filechooser.*;
 
 /*
  * FileChooserDemo2.java requires these files:
@@ -52,6 +48,7 @@ import javax.swing.filechooser.*;
  *   images/tiffIcon.gif (required by ImageFileView.java)
  *   images/pngIcon.png (required by ImageFileView.java)
  */
+
 public class FileChooserDemo2 extends JPanel {
     static private String newline = "\n";
     public JFileChooser fc;

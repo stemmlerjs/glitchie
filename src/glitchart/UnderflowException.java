@@ -1,6 +1,6 @@
 package glitchart;
 
-/**BST Program
+/**Glitch-Pond
 *
 * @author Khalil Stemmler
 * October 2nd, 2014

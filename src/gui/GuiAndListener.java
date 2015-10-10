@@ -1,3 +1,12 @@
+/*
+ * Project: Glitch-Pond
+ * Author: Khalil Stemmler
+ * Date Modified: Oct 10th, 2015
+ * 
+ * The GuiAndListener class is the entry point to the Glitch-Pond project. It creates an instance of the Glitch backend
+ * and relies on the backend to perform glitches reqested from the UI.
+ */
+
 package gui;
 
 import glitchart.Glitch;
@@ -23,11 +32,11 @@ import javax.swing.JMenuItem;
 import javax.swing.JTextPane;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
-
 import components.FileChooserDemo2;
 
 public class GuiAndListener extends JFrame {
 	
+	//Instance Variables
 	FileChooserDemo2 fileChooser;
 	public File picFromPrompt;
 	JLabel picDisplay;
@@ -41,6 +50,9 @@ public class GuiAndListener extends JFrame {
 		//STARTUP THE GUI
 		initialize();
 	}
+	
+	/** This method sets up all of the GUI elements to the screen and boots all of the ActionListeners
+     **/
 		
 	private void initialize() {
 		//SETUP THE FORM
@@ -87,6 +99,7 @@ public class GuiAndListener extends JFrame {
 			}
 		});
 		
+		//Logo
 		ImageIcon logodesign = new ImageIcon("src/gui/glitchie3.jpg");
 		JLabel logo = new JLabel("");
 		logo.setBounds(200, 0, 426, 50);
@@ -227,12 +240,17 @@ public class GuiAndListener extends JFrame {
 		getContentPane().setLayout(groupLayout);
 		setVisible(true);	
 	}
+	
+	/* Update the canvas with the new image  */
 
 	protected void updatePicture(BufferedImage image) {
 		image = resize((BufferedImage) image, 400, 400);
 		ImageIcon icon = new ImageIcon(image); 
 		picDisplay.setIcon(icon);
 	}
+	
+	/* Resize the picture before it goes onto the UI. 
+	 * EDIT: this method needs additional logic  */
 	
 	public static BufferedImage resize(BufferedImage image, int width, int height) {
 	    BufferedImage bi = new BufferedImage(width, height, BufferedImage.TRANSLUCENT);
@@ -242,6 +260,8 @@ public class GuiAndListener extends JFrame {
 	    g2d.dispose();
 	    return bi;
 	}
+	
+	/* Main entry-point to the Glitch-Pond project */
 	
 	public static void main (String [] args){
 		new GuiAndListener();

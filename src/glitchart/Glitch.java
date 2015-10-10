@@ -1,3 +1,15 @@
+/**Glitch-Art
+*
+* @author Khalil Stemmler
+* October 2nd, 2014
+* The backend of the Glitch-Pond application. Performs all glitch operations.
+* 
+* TODO: Cleanup unused objects and classes
+* TODO: Leave meaningful comments
+* 
+*/
+
+
 package glitchart;
 
 import java.awt.image.BufferedImage;
@@ -6,14 +18,9 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.file.Files;
-import java.text.ParseException;
 import java.util.Arrays;
 import java.util.Scanner;
-
 import javax.imageio.ImageIO;
-import javax.swing.JFileChooser;
-
 import components.FileChooserDemo2;
 
 public class Glitch {
@@ -22,7 +29,7 @@ public class Glitch {
 	String userInput;
 	int iterations;
 	byte[] imageInByte;
-	LinkStack memory;
+	LinkStack memory; 
 	BufferedImage [] memoryImage;
 	public int imageIndex;
 	public boolean fileBroken;
@@ -34,24 +41,24 @@ public class Glitch {
 	FileChooserDemo2 filech;
 	File image;
 	
+	public Glitch(){	
+		//Initialize
+		memoryImage = new BufferedImage[50];
+		imageIndex = -1;
+	} 
+	
 	public void setupGlitchImage(BufferedImage img){
 		//Convert Image to Byte Array
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		try{
-		ImageIO.write(img, fileType, baos);
-		baos.flush();
-		imageInByte = baos.toByteArray();
-		baos.close();
+			ImageIO.write(img, fileType, baos);
+			baos.flush();
+			imageInByte = baos.toByteArray();
+			baos.close();
 		} catch (IOException e){
 			System.out.println("Error in the setupGlitchImage() method in the Glitch Backend");
 		}
 	}
-	
-	public Glitch(){	
-		//SETUP IMAGE/SEND TO BYTE ARRAY
-		memoryImage = new BufferedImage[50];
-		imageIndex = -1;
-	} 
 	
 	public void resetArray(){
 		memoryImage = null;
@@ -119,10 +126,6 @@ public class Glitch {
 
 		image = filech.getfile();
 		System.out.println(image.getAbsolutePath());
-	}
-	
-	public static void main(String args[]){
-		new Glitch();
 	}
 
 	public boolean nextIndexNull() {
