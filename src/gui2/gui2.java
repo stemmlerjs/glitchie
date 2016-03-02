@@ -8,8 +8,6 @@
 
 package gui2;
 
-import glitchart.LinkStack;
-import glitchart.Node;
 
 import java.awt.EventQueue;
 

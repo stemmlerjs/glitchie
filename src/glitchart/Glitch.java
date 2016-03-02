@@ -61,9 +61,16 @@ public class Glitch {
 	}
 	
 	public void resetArray(){
+		System.out.println("resetting array, starting from index: " + imageIndex);
+		if(imageIndex != -1){
+			for(int i = 0; i < imageIndex; i++){
+				memoryImage[i] = null;
+			}
+		}
 		memoryImage = null;
 		memoryImage = new BufferedImage[50];
 		imageIndex = -1;
+		System.gc();
 	}
 	
 	public BufferedImage redoNext(){
@@ -80,6 +87,7 @@ public class Glitch {
 	}
 	
 	public BufferedImage arrayRemove(){
+		memoryImage[imageIndex] = null;
 		imageIndex--;
 		System.out.println("Array index - " + imageIndex);
 		setupGlitchImage(memoryImage[imageIndex]);
