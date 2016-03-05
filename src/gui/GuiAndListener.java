@@ -244,7 +244,7 @@ public class GuiAndListener extends JFrame {
 	/* Update the canvas with the new image  */
 
 	protected void updatePicture(BufferedImage image) {
-		image = resize((BufferedImage) image, 400, 400);
+		image = resize((BufferedImage) image);
 		ImageIcon icon = new ImageIcon(image); 
 		picDisplay.setIcon(icon);
 	}
@@ -252,7 +252,35 @@ public class GuiAndListener extends JFrame {
 	/* Resize the picture before it goes onto the UI. 
 	 * EDIT: this method needs additional logic  */
 	
-	public static BufferedImage resize(BufferedImage image, int width, int height) {
+	public static BufferedImage resize(BufferedImage image) {
+		int height = image.getHeight();
+		int width = image.getWidth();
+		System.out.println("The height: " + height + " -- and the width: " + width);
+		
+		// Resize picture to fit the UI nicely
+		if((height > 400) || (width > 570)){
+			if(height > width){
+				System.out.println("resize 1");
+				double rate = height / 400;
+				height = 400;
+				width = (int) Math.round(width / rate);	
+			} else if (width > height) { // width greater than or equal to height
+				
+				// TODO: Use BigDecimal to solve this problem!!
+				System.out.println("resize 2 - " + width + " / " + 570 + " = rate");
+				double rate = (double) width / 570.0;
+				width = 570;
+				System.out.println("rate " + rate);
+				height = (int) Math.round(height / rate);
+			} else {
+				System.out.println("resize 3");
+				height = 400;
+				width = 400;
+			}
+		}
+		
+		System.out.println("The new height: " + height + " -- and the new width: " + width);
+		
 	    BufferedImage bi = new BufferedImage(width, height, BufferedImage.TRANSLUCENT);
 	    Graphics2D g2d = (Graphics2D) bi.createGraphics();
 	    g2d.addRenderingHints(new RenderingHints(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY));
