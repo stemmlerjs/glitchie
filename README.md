@@ -1,6 +1,8 @@
 # Glitch-Pond
 A small GUI application written in Java that allows you to databend photos and undo databends.
 
+![blurbchat](https://cloud.githubusercontent.com/assets/6892666/13548037/f228d03c-e2b3-11e5-962c-be4a2074a9bd.gif)
+
 ####Setup####
 1. Download ZIP.
 2. Optional: Create a project via your favourite IDE and copy the contents of the 
